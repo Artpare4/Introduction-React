@@ -9,10 +9,10 @@ function App() {
       </header>
       <main className="app__main">
         <div className="cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Titre1" />
+          <Card title="Titre2" />
+          <Card title="Titre3" />
+          <Card title="Titre4" />
         </div>
       </main>
 
