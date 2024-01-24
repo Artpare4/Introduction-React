@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 import Card from "./components/Card.jsx";
 import Button from "./components/Button.jsx";
 
 function App() {
+  const [cpt, addOne] = useState(0);
+  const clickHandler = () => {
+    addOne(cpt + 1);
+  };
+
   return (
     <div className="app">
       <header className="app__header header">
@@ -14,20 +19,16 @@ function App() {
         <div className="cards">
           <Card title="Titre1">
             <div>Content 1</div>
-            <Button
-              className="btn"
-              onClick={() => console.log("Une fonction anonyme !")}
-            >
+            <Button className="btn" onClick={clickHandler}>
+              {cpt}
               <FontAwesomeIcon icon={faHeart} />
             </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
-            <Button
-              className="btn"
-              onClick={() => console.log("Une fonction anonyme !")}
-            >
+            <Button className="btn" onClick={clickHandler}>
+              {cpt}
               <FontAwesomeIcon icon={faStar} />
             </Button>
           </Card>
