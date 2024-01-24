@@ -21,5 +21,6 @@ module.exports = {
   ],
   rules: {
     "prettier/prettier": ["error"],
+    "react/require-default-props": [2, { functions: "defaultArguments" }],
   },
 };
