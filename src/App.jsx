@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 import Card from "./components/Card.jsx";
 import Button from "./components/Button.jsx";
 
@@ -12,12 +15,16 @@ function App() {
         <div className="cards">
           <Card title="Titre1">
             <div>Content 1</div>
-            <Button className="btn">bouton</Button>
+            <Button className="btn">
+              <FontAwesomeIcon icon={faHeart} />
+            </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
-            <Button className="btn">bouton</Button>
+            <Button className="btn">
+              <FontAwesomeIcon icon={faStar} />
+            </Button>
           </Card>
           <Card title="Titre3">
             <div>Content 3</div>
