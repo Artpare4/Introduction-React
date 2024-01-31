@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 import Card from "./components/Card.jsx";
@@ -10,6 +10,11 @@ function App() {
     addOne(cpt + 1);
   };
 
+  const[counts]=useState({
+    heart: 0,
+    star: 0,
+  })
+
   return (
     <div className="app">
       <header className="app__header header">
@@ -20,20 +25,28 @@ function App() {
           <Card title="Titre1">
             <div>Content 1</div>
             <Button className="btn" onClick={clickHandler}>
-              <Counter/>
-              <FontAwesomeIcon icon={faHeart} />
+              <Counter onChange={(ctp)=>{
+                counts.heart=ctp
+                console.log(counts)
+                console.log(counts.star+counts.heart)
+              }} className={"btn"} after={<FontAwesomeIcon icon={faHeart} />}/>
             </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
             <Button className="btn" onClick={clickHandler}>
-              <Counter/>
-              <FontAwesomeIcon icon={faStar} />
+              <Counter  onChange={(ctp)=>{
+                counts.star=ctp
+                console.log(counts)
+                console.log(counts.star+counts.heart)
+              }} className={"btn"} after={<FontAwesomeIcon icon={faStar} />}/>
+
             </Button>
           </Card>
           <Card title="Titre3">
             <div>Content 3</div>
+            <div>Somme: {counts.star+counts.heart}</div>
           </Card>
           <Card title="Titre4">
             <div>Content 4</div>
