@@ -5,16 +5,19 @@ import Card from "./components/Card.jsx";
 import Button from "./components/Button.jsx";
 import Counter from "./components/Counter.jsx";
 function App() {
-  const [cpt, addOne] = useState(0);
+  /*const [cpt, addOne] = useState(0);
   const clickHandler = () => {
     addOne(cpt + 1);
-  };
+  };*/
 
   const[counts]=useState({
     heart: 0,
     star: 0,
-  })
-
+  });
+  const [somme,sum]=useState(counts.star+counts.star);
+  const ClickSum = () => {
+    sum(counts.star+counts.heart);
+  };
   return (
     <div className="app">
       <header className="app__header header">
@@ -24,29 +27,22 @@ function App() {
         <div className="cards">
           <Card title="Titre1">
             <div>Content 1</div>
-            <Button className="btn" onClick={clickHandler}>
               <Counter onChange={(ctp)=>{
                 counts.heart=ctp
-                console.log(counts)
-                console.log(counts.star+counts.heart)
+                ClickSum()
               }} className={"btn"} after={<FontAwesomeIcon icon={faHeart} />}/>
-            </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
-            <Button className="btn" onClick={clickHandler}>
               <Counter  onChange={(ctp)=>{
                 counts.star=ctp
-                console.log(counts)
-                console.log(counts.star+counts.heart)
+                ClickSum()
               }} className={"btn"} after={<FontAwesomeIcon icon={faStar} />}/>
-
-            </Button>
           </Card>
           <Card title="Titre3">
             <div>Content 3</div>
-            <div>Somme: {counts.star+counts.heart}</div>
+            <div>Somme: {somme}</div>
           </Card>
           <Card title="Titre4">
             <div>Content 4</div>
