@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 import Card from "./components/Card.jsx";
 import Button from "./components/Button.jsx";
-
+import Counter from "./components/Counter.jsx";
 function App() {
   const [cpt, addOne] = useState(0);
   const clickHandler = () => {
@@ -20,16 +20,14 @@ function App() {
           <Card title="Titre1">
             <div>Content 1</div>
             <Button className="btn" onClick={clickHandler}>
-              {cpt}
-              <FontAwesomeIcon icon={faHeart} />
+              <Counter after={"<div>tefrezfref</div>"}/>
             </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
             <Button className="btn" onClick={clickHandler}>
-              {cpt}
-              <FontAwesomeIcon icon={faStar} />
+              <Counter before={"ergreggegtger"} after={<FontAwesomeIcon icon={faStar} />}/>
             </Button>
           </Card>
           <Card title="Titre3">
