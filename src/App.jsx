@@ -20,14 +20,16 @@ function App() {
           <Card title="Titre1">
             <div>Content 1</div>
             <Button className="btn" onClick={clickHandler}>
-              <Counter after={"<div>tefrezfref</div>"}/>
+              <Counter/>
+              <FontAwesomeIcon icon={faHeart} />
             </Button>
           </Card>
 
           <Card title="Titre2">
             <div>Content 2</div>
             <Button className="btn" onClick={clickHandler}>
-              <Counter before={"ergreggegtger"} after={<FontAwesomeIcon icon={faStar} />}/>
+              <Counter/>
+              <FontAwesomeIcon icon={faStar} />
             </Button>
           </Card>
           <Card title="Titre3">
