@@ -5,13 +5,14 @@ function Card({
   children = "Content",
   title = "Titre",
   classname = "",
+  onClick = () => {},
   ...props
 }) {
   return (
-    <article className={`card ${classname}`} {...props}>
+    <button onClick={onClick} className={`card ${classname}`} {...props}>
       <header className="card__header header__title">{title}</header>
       <section className="card__main">{children}</section>
-    </article>
+    </button>
   );
 }
 
@@ -19,6 +20,7 @@ Card.propTypes = {
   title: PropTypes.node,
   children: PropTypes.node,
   classname: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Card;

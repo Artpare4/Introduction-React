@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
@@ -12,8 +12,11 @@ function FoldableCard({
   ...props
 }) {
   let classe = "foldable";
-
-  if (!opened) {
+  const [isShown, change] = useState(opened);
+  const clickHandler = () => {
+    change(!isShown);
+  };
+  if (!isShown) {
     children = "";
     var icon = faCirclePlus;
   } else {
@@ -22,6 +25,7 @@ function FoldableCard({
   }
   return (
     <Card
+      onClick={clickHandler}
       title={
         <>
           {title}
