@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "./Card.jsx";
 
 function FoldableCard({
@@ -9,14 +12,24 @@ function FoldableCard({
   ...props
 }) {
   let classe = "foldable";
+
   if (!opened) {
     children = "";
+    var icon = faCirclePlus;
   } else {
     classe += " shown";
-    console.log(classe);
+    var icon = faCircleMinus;
   }
   return (
-    <Card title={title} classname={classe}>
+    <Card
+      title={
+        <>
+          {title}
+          <FontAwesomeIcon icon={icon} />
+        </>
+      }
+      classname={classe}
+    >
       {children}
     </Card>
   );
