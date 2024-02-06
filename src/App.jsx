@@ -27,7 +27,7 @@ function App() {
       </header>
       <main className="app__main">
         <div className="cards">
-          <Card opened title="Titre1">
+          <FoldableCard opened title="Titre1">
             <div>Content 1</div>
             <Counter
               onChange={(ctp) => {
@@ -36,8 +36,9 @@ function App() {
               }}
               className="btn"
               after={<FontAwesomeIcon icon={faHeart} />}
+              initial={counts.heart}
             />
-          </Card>
+          </FoldableCard>
 
           <FoldableCard opened title="Titre2">
             <div>Content 2</div>
@@ -48,6 +49,7 @@ function App() {
               }}
               className="btn"
               after={<FontAwesomeIcon icon={faStar} />}
+              initial={counts.star}
             />
           </FoldableCard>
           <FoldableCard opened title="Titre3">
