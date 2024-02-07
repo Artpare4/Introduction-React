@@ -10,6 +10,7 @@ function FoldableCard({
   children = "Content",
   title = "Titre",
   opened = false,
+  onToggleOpened = null,
   ...props
 }) {
   const classe = "foldable";
@@ -39,6 +40,7 @@ FoldableCard.propTypes = {
   title: PropTypes.node,
   children: PropTypes.node,
   opened: PropTypes.bool,
+  onToggleOpened: PropTypes.func,
 };
 
 export default FoldableCard;
