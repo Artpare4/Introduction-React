@@ -5,6 +5,8 @@ import Card from "./components/Card.jsx";
 import Button from "./components/Button.jsx";
 import Counter from "./components/Counter.jsx";
 import FoldableCard from "./components/FoldableCard.jsx";
+import cardsData from "./constants/cardsData.js";
+import Cards from "./components/Cards.jsx";
 
 function App() {
   /* const [cpt, addOne] = useState(0);
@@ -16,7 +18,7 @@ function App() {
     heart: 0,
     star: 0,
   });
-  const [somme, sum] = useState(counts.star + counts.star);
+  const [somme, sum] = useState(counts.heart + counts.star);
   const ClickSum = () => {
     sum(counts.star + counts.heart);
   };
@@ -26,7 +28,9 @@ function App() {
         <h1 className="header__title">Introduction to React</h1>
       </header>
       <main className="app__main">
+        <Cards cardsData={cardsData} />
         <div className="cards">
+          {/*
           <FoldableCard opened title="Titre1">
             <div>Content 1</div>
             <Counter
@@ -58,7 +62,7 @@ function App() {
           </FoldableCard>
           <FoldableCard title="Titre4">
             <div>Content 4</div>
-          </FoldableCard>
+          </FoldableCard> */}
         </div>
       </main>
 
